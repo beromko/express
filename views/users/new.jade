@@ -1,0 +1,10 @@
+h1 New DBuser
+
+form(method="POST", action="/dbusers")
+	p Name:
+		input#name(type="text" name="name")
+	p Email:
+		input#email(type="email" name="email")
+	p Age:
+		input#age(type="number" name="age")
+	p: button(type="submit") Create

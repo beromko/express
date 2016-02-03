@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	h2= title
+	- var name = "Roman";
+	- var sname = "<em>Khutkyy</em>";
+
+	p= name
+	p #{sname}
+	p !{sname}
