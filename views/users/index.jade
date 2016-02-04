@@ -1,5 +1,16 @@
-h1 All DBusers
+extends ../layout
 
-ul 
-	each user in users
-		li: a(href="/dbusers/#{user.name}") #{user.name} (#{user.email})
+block content
+
+	h2 All DBusers
+
+	ul.list-group 
+		each user in users
+			li.list-group-item
+				a(href="/dbusers/#{user.name}") #{user.name} 
+				span.badge #{user.email} 
+					
+
+	br
+	br
+	a.btn.btn-primary(href="/dbusers/new") Add user

@@ -1,5 +1,17 @@
-h1 #{user.name}
+extends ../layout
 
-ul
-	li Email: #{user.email}
-	li Age: #{user.age}
+block content
+	h2 #{user.name}
+
+	ul
+		li Email: #{user.email}
+		li Age: #{user.age}
+	hr
+	
+	form(method="POST", action="/dbusers/#{user.name}")
+		p.btn-toolbar
+			input(type="hidden", name="_method", value="DELETE")
+			a.btn.btn-primary(href="/dbusers/#{user.name}/edit") Edit
+			a.btn.btn-info(href="/dbusers") View all
+			a.btn.btn-success(href="/dbusers/new") Add user
+			button.btn.btn-danger(type="submit") Delete

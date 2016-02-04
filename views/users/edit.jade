@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+	h2 Update DBuser
+
+	form.form-horizontal(method="POST", action="/dbusers/#{user.name}")
+		input(type="hidden", name="_method", value="PUT") 
+		div.form-group
+			label.control-label.col-sm-2 Name:
+			div.col-sm-10 
+				input#name(type="text" name="name", value="#{user.name}")
+		div.form-group
+			label.control-label.col-sm-2 Email:
+			div.col-sm-10
+				input#email(type="email" name="email", value="#{user.email}")
+		div.form-group
+			label.control-label.col-sm-2 Age:
+			div.col-sm-10
+				input#age(type="number" name="age", value="#{user.age}")
+		div.form-group
+			div.col-sm-offset-2.col-sm-10
+				p.btn-toolbar
+					button.btn.btn-primary(type="submit") Save Changes
+					a.btn.btn-danger(href="/dbusers/#{user.name}") Cancel
